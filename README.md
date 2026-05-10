@@ -63,7 +63,7 @@ The public demo uses **fake English data** to protect privacy while still showin
 | 📈 Forecast | Project 1, 5, 10, and 20 year outcomes using investment compounding |
 | 🧮 Investment Calculator | Simulate investment growth using monthly compounding |
 | 🙈 Privacy Mode | Hide sensitive numbers while sharing or presenting |
-| 🎨 Themes | Modern themes with matching dashboard and chart colors |
+| 🎨 Theme Showcase | Switch between modern themes with matching dashboard and chart colors |
 
 ---
 
@@ -170,6 +170,30 @@ Simulates investment growth using starting amount, monthly contribution, annual 
 ![Settings](Screenshots/settings.png)
 
 Theme library and budget allocation settings.
+
+---
+
+### 12. Theme Showcase
+
+![Theme Showcase](Screenshots/theme-showcase.png)
+
+A dedicated screenshot to show the available modern themes and how the app style changes across themes.
+
+---
+
+### 13. Privacy Mode Button
+
+![Privacy Mode Button](Screenshots/privacy-button.png)
+
+Shows the eye/privacy button used to hide sensitive numbers before sharing the screen or taking screenshots.
+
+---
+
+### 14. Privacy Mode Active
+
+![Privacy Mode Active](Screenshots/privacy-mode-active.png)
+
+Shows the dashboard or analysis screen with financial numbers blurred for privacy.
 
 ---
 
@@ -377,6 +401,49 @@ Best screenshot: `Screenshots/wishlist.png`
 </details>
 
 <details>
+<summary><strong>🙈 Privacy Mode</strong></summary>
+
+Privacy Mode helps users present or share the dashboard without exposing sensitive financial values.
+
+Main functions:
+
+- hide or blur sensitive financial numbers
+- blur chart data
+- toggle visibility using the eye icon
+- allow temporary reveal on hover
+- protect numbers during screenshots, screen sharing, or portfolio demos
+
+Recommended screenshots:
+
+```text
+Screenshots/privacy-button.png
+Screenshots/privacy-mode-active.png
+```
+
+</details>
+
+<details>
+<summary><strong>🎨 Themes</strong></summary>
+
+The theme system lets users switch between multiple modern visual styles.
+
+Main functions:
+
+- modern theme library
+- dashboard colors change with selected theme
+- charts adapt to theme colors
+- light and dark visual styles
+- better portfolio presentation flexibility
+
+Recommended screenshot:
+
+```text
+Screenshots/theme-showcase.png
+```
+
+</details>
+
+<details>
 <summary><strong>📈 Forecast</strong></summary>
 
 Forecast estimates future outcomes across:
@@ -507,9 +574,42 @@ I designed and built:
 | 8 | Investment Calculator | `investment-calculator.png` | Shows compounding logic |
 | 9 | Expense Log | `expense-log.png` | Shows CRUD functionality |
 | 10 | Settings | `settings.png` | Shows customization |
-| Optional | Privacy Mode | `privacy-mode.png` | Shows privacy UX |
+| 11 | Theme Showcase | `theme-showcase.png` | Shows visual customization |
+| 12 | Privacy Button | `privacy-button.png` | Shows the privacy control |
+| 13 | Privacy Mode Active | `privacy-mode-active.png` | Shows sensitive numbers blurred |
 
 ---
+
+---
+
+## 📁 Required Screenshot File Structure
+
+To make images appear correctly on GitHub, keep the folder name and file names exactly like this:
+
+```text
+personal-budget-tracker/
+│
+├── index.html
+├── README.md
+└── Screenshots/
+    ├── dashboard.png
+    ├── summary-view.png
+    ├── spending-history.png
+    ├── category-analysis.png
+    ├── income-analysis.png
+    ├── import-center.png
+    ├── wishlist.png
+    ├── expense-log.png
+    ├── forecast.png
+    ├── investment-calculator.png
+    ├── settings.png
+    ├── theme-showcase.png
+    ├── privacy-button.png
+    └── privacy-mode-active.png
+```
+
+GitHub is case-sensitive, so `Screenshots/` must match the folder name exactly.
+
 
 ## 🔮 Future Improvements
 
