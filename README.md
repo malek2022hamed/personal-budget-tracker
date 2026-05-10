@@ -1,217 +1,312 @@
-# BudgetOS Pro — Personal Budget Tracker
+<div align="center">
 
-A modern offline-first personal finance analytics web app built with **HTML, CSS, JavaScript, Chart.js, LocalStorage, and XLSX import support**.
+# 💸 BudgetOS Pro  
+### Personal Budget Tracker & Finance Analytics Web App
 
-This project turns raw transaction data into an interactive personal finance operating system with dashboards, expense tracking, income analysis, spending history, category analysis, budget planning, wishlist tracking, emergency fund logic, investment forecasting, and smart import tools.
+A modern offline-first personal finance operating system that turns transaction-level data into dashboards, spending insights, budget planning, wishlist tracking, and investment forecasts.
 
-The public demo uses **Ai generated financial data** for portfolio presentation.
+<br>
 
----
+![BudgetOS Pro Dashboard](Screenshots/dashboard.png)
 
-## Live Demo
+<br>
 
-Add your GitHub Pages link here after publishing:
+[![Built with HTML](https://img.shields.io/badge/HTML-Frontend-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
+[![Built with CSS](https://img.shields.io/badge/CSS-Design-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Logic-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+[![Chart.js](https://img.shields.io/badge/Chart.js-Visuals-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](#)
+[![LocalStorage](https://img.shields.io/badge/LocalStorage-Offline_First-7C3AED?style=for-the-badge)](#)
 
-```text
-https://yourusername.github.io/personal-budget-tracker/
-```
+<br>
 
----
+**Live Demo:** Add your GitHub Pages link here  
+**Status:** Portfolio Demo  
+**Data:** Fake English Demo Data  
 
-## Project Summary
-
-**BudgetOS Pro** is designed to answer one main question:
-
-> How can transaction-level financial data become clear financial decisions?
-
-Instead of only recording expenses, the app analyzes financial behavior across income, spending, saving, investing, wishlist planning, emergency fund usage, and future financial growth.
-
----
-
-## Key Features
-
-- Modern OS-style finance dashboard
-- Expense Log with editable transactions
-- Smart Import Center for CSV, Excel text, TSV, TXT, and messy table imports
-- Income Analysis by income stream
-- Spending History with month-by-month comparison
-- Category and subcategory spending analysis
-- Customizable Budget Plan
-- Emergency Fund tracking and spending source logic
-- Wishlist page for planned purchases
-- Forecast page for 1, 5, 10, and 20 years
-- Investment Calculator with compounding
-- Privacy mode to hide sensitive numbers
-- Multiple modern themes
-- Theme-aware charts
-- Mobile-friendly layout
-- Local browser storage using LocalStorage
+</div>
 
 ---
 
-## Tools and Technologies
+## ✨ Overview
 
-| Area | Tools |
+**BudgetOS Pro** is a browser-based personal finance analytics app designed to answer one question:
+
+> How can daily financial transactions become clear financial decisions?
+
+Instead of only recording expenses, the app helps users understand financial behavior across:
+
+- income
+- spending
+- savings
+- investments
+- emergency fund usage
+- wishlist planning
+- long-term forecasting
+
+The public demo uses **fake English data** to protect privacy while still showing realistic financial patterns.
+
+---
+
+## 🚀 Key Highlights
+
+| Feature | What it does |
 |---|---|
-| Frontend | HTML, CSS, JavaScript |
+| 📊 Dashboard | Shows monthly income, expenses, surplus, budget pressure, and cash/card balance |
+| 🧾 Expense Log | Add, edit, delete, filter, and export transactions |
+| 📥 Import Center | Import CSV, Excel text, TSV, TXT, and messy table data |
+| 💰 Income Analysis | Analyze salary, freelance, investment return, and unexpected income |
+| 📆 Spending History | Compare month-by-month income, expenses, saving, and remaining balance |
+| 🧠 Category Analysis | Uses descriptions as subcategories to detect exact spending habits |
+| 🎯 Budget Plan | Customize allocations for essentials, wants, guilt-free, giving, investments, and emergency fund |
+| 🧯 Emergency Fund | Track emergency savings and emergency-funded expenses |
+| 🛒 Wishlist | Plan future purchases and convert bought items into expense log entries |
+| 📈 Forecast | Project 1, 5, 10, and 20 year outcomes using investment compounding |
+| 🧮 Investment Calculator | Simulate investment growth using monthly compounding |
+| 🙈 Privacy Mode | Hide sensitive numbers while sharing or presenting |
+| 🎨 Themes | Modern themes with matching dashboard and chart colors |
+
+---
+
+## 🧩 Tech Stack
+
+| Area | Technology |
+|---|---|
+| Structure | HTML |
+| Styling | CSS |
+| Logic | JavaScript |
 | Charts | Chart.js |
-| Data Import | XLSX parser, CSV/TSV/text parsing |
+| Excel Import | XLSX Parser |
 | Storage | LocalStorage |
-| UI Style | Modern dashboard / finance OS layout |
-| Data Model | Transaction-level financial records |
+| Architecture | Offline-first single-page app |
 
 ---
 
-## Data Privacy
+## 🖼️ Screenshots
 
-This is an offline-first demo project.
+> Make sure the image files are inside a folder called `screenshots` in the same repo level as `index.html`.
 
-- The public version uses fake demo data.
-- Data is stored locally in the browser using LocalStorage.
-- No financial data is sent to a server.
-- The app does not include authentication or cloud database storage.
-- This project is for portfolio/demo purposes and is not financial advice.
+### 1. Dashboard
 
----
+![Dashboard](Screenshots/dashboard.png)
 
-## Data Model
-
-The app is mainly built around transaction-level records.
-
-Each transaction includes:
-
-| Field | Description |
-|---|---|
-| `date` | Transaction date |
-| `description` | Transaction name or short explanation |
-| `amount` | Transaction amount |
-| `category` | Main category such as Essentials, Wants, Guilt-free, Investment, Emergency Fund, Income |
-| `type` | Income, Expense, or Transfer |
-| `incomeStream` | Salary, Freelance, Investment Return, Unexpected, or Previous Month Balance |
-| `fundingSource` | Main Budget or Emergency Fund |
-| `notes` | Optional notes |
+The main financial snapshot showing income, spending, surplus, budget progress, and spending split.
 
 ---
 
-# Page-by-Page Documentation
+### 2. Summary View
 
-## 1. Dashboard
+![Summary View](Screenshots/summary-view.png)
 
-The Dashboard is the main financial snapshot.
+A high-level overview with date filters, net cashflow, top expenses, best/worst months, and financial health scorecard.
 
-### Main purpose
+---
 
-To show the current month’s financial position at a glance.
+### 3. Spending History
 
-### Main functions
+![Spending History](Screenshots/spending-history.png)
 
-- Shows monthly income
-- Shows monthly spending
-- Shows invested amount
-- Shows surplus or deficit
-- Shows budget progress by category
-- Shows spending split by category
-- Shows monthly income vs spending
-- Shows spent percentage trend
-- Shows cumulative wealth trend
-- Shows recent transactions
-- Shows card/bank balance and calculated cash
+Month-by-month comparison of income, expenses, saved amount, remaining balance, and category behavior.
 
-### Important logic
+---
 
-The dashboard calculates monthly surplus as:
+### 4. Category Analysis
+
+![Category Analysis](Screenshots/category-analysis.png)
+
+Uses transaction descriptions as subcategories to detect repeated spending habits and biggest leaks.
+
+---
+
+### 5. Income Analysis
+
+![Income Analysis](Screenshots/income-analysis.png)
+
+Breaks income into salary, freelance, investment return, and unexpected income streams.
+
+---
+
+### 6. Import Center
+
+![Import Center](Screenshots/import-center.png)
+
+Smart import workflow for CSV, Excel text, TSV, TXT, and messy financial tables.
+
+---
+
+### 7. Wishlist
+
+![Wishlist](Screenshots/wishlist.png)
+
+Plan future purchases, estimate prices, set priority, and convert bought items into expense log entries.
+
+---
+
+### 8. Expense Log
+
+![Expense Log](Screenshots/expense-log.png)
+
+Editable transaction log with search, filters, categories, income streams, and export options.
+
+---
+
+### 9. Forecast
+
+![Forecast](Screenshots/forecast.png)
+
+Projects future wealth for 1, 5, 10, and 20 years using investment compounding.
+
+---
+
+### 10. Investment Calculator
+
+![Investment Calculator](Screenshots/investment-calculator.png)
+
+Simulates investment growth using starting amount, monthly contribution, annual return, and contribution growth.
+
+---
+
+### 11. Settings & Themes
+
+![Settings](Screenshots/settings.png)
+
+Theme library and budget allocation settings.
+
+---
+
+## 🧠 Core Logic
+
+### Monthly Surplus
 
 ```text
 Monthly Surplus = Income - Expenses - Transfers
 ```
 
-Cash is calculated as:
+### Cash Calculation
 
 ```text
 Cash = Monthly Surplus - Card / Bank Balance
 ```
 
-This helps separate money available as cash from money currently stored in a card or bank account.
-
-### Screenshot to take
-
-Take a full desktop screenshot showing:
-
-- KPI cards
-- Cash & card balance section
-- Budget progress
-- Spending split chart
-
-Suggested file name:
+### Available Funds
 
 ```text
-screenshots/dashboard.png
+Available Funds = Total Income + Previous Month Balance
+```
+
+### Real Income
+
+```text
+Total Income = Salary + Freelance + Investment Return + Unexpected
+```
+
+Previous Month Balance is treated as carryover, not real income.
+
+### Emergency Fund Balance
+
+```text
+Emergency Fund Balance =
+Emergency Fund Transfers - Expenses Paid From Emergency Fund
+```
+
+### Forecast Monthly Return
+
+```text
+Monthly Return = (1 + Annual Return) ^ (1 / 12) - 1
+```
+
+### Forecast Scenarios
+
+```text
+Base Case = User annual return
+Worst Case = User annual return - 10 percentage points
+Best Case = User annual return + 10 percentage points
 ```
 
 ---
 
-## 2. Summary View
+## 🗂️ Data Model
 
-The Summary View gives a filtered high-level overview.
+The app is built around transaction-level records.
 
-### Main purpose
-
-To summarize overall performance across a selected date range.
-
-### Main functions
-
-- Date range filter
-- Total income
-- Total expenses
-- Net cashflow
-- All-time invested
-- Emergency fund balance
-- Top expenses
-- Best and worst months
-- Financial health scorecard
-- Net cashflow trend
-- Category stack trend
-- Expense frequency by category
-- Investment rate month by month
-
-### Important logic
-
-Summary calculations are based on the selected date range.
-
-It separates:
-
-- real income
-- expenses
-- investment transfers
-- emergency fund transfers
-- remaining balance
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- date filter
-- hero KPIs
-- financial health scorecard
-- one chart section
-
-Suggested file name:
-
-```text
-screenshots/summary-view.png
-```
+| Field | Description |
+|---|---|
+| `date` | Transaction date |
+| `description` | Transaction name |
+| `amount` | Transaction amount |
+| `category` | Main category |
+| `type` | Income, Expense, or Transfer |
+| `incomeStream` | Salary, Freelance, Investment Return, Unexpected, Previous Month Balance |
+| `fundingSource` | Main Budget or Emergency Fund |
+| `notes` | Optional notes |
 
 ---
 
-## 3. Income Analysis
+## 📄 Page Documentation
 
-The Income Analysis page breaks down income by source.
+<details>
+<summary><strong>📊 Dashboard</strong></summary>
 
-### Main purpose
+The Dashboard gives the current financial snapshot.
 
-To understand income stability and dependency on each stream.
+Main functions:
 
-### Income streams
+- monthly income
+- monthly spending
+- investment amount
+- surplus/deficit
+- budget progress
+- spending split
+- recent entries
+- cash and card balance
+
+Best screenshot: `Screenshots/dashboard.png`
+
+</details>
+
+<details>
+<summary><strong>🧾 Expense Log</strong></summary>
+
+The Expense Log is the transaction management page.
+
+Main functions:
+
+- add transaction
+- edit transaction
+- delete transaction
+- search
+- filter
+- export CSV
+- choose income stream
+- choose funding source
+
+Best screenshot: `Screenshots/expense-log.png`
+
+</details>
+
+<details>
+<summary><strong>📥 Import Center</strong></summary>
+
+The Import Center converts external data into valid tracker records.
+
+Supported formats:
+
+- CSV
+- TSV
+- TXT
+- pasted Excel table
+- XLSX files
+- messy bank-statement-like text
+
+Best screenshot: `Screenshots/import-center.png`
+
+</details>
+
+<details>
+<summary><strong>💰 Income Analysis</strong></summary>
+
+Income Analysis breaks income into streams.
+
+Streams:
 
 - Salary
 - Freelance
@@ -219,192 +314,17 @@ To understand income stability and dependency on each stream.
 - Unexpected
 - Previous Month Balance
 
-### Main functions
+Best screenshot: `Screenshots/income-analysis.png`
 
-- Filter by date range
-- Filter by income stream
-- Compare income streams over time
-- Show income mix
-- Compare income vs expenses vs saved
-- Measure income volatility
-- Show income stream table
-- Generate income insights
+</details>
 
-### Important logic
+<details>
+<summary><strong>📆 Spending History</strong></summary>
 
-Previous Month Balance is treated as carryover, not true income.
+Spending History compares monthly financial behavior.
 
-```text
-Total Income = Salary + Freelance + Investment Return + Unexpected
-Available Funds = Total Income + Previous Month Balance
-```
+Tracks:
 
-This prevents carryover money from inflating real income.
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- income stream filters
-- income streams over time chart
-- income mix chart
-- income insights
-
-Suggested file name:
-
-```text
-screenshots/income-analysis.png
-```
-
----
-
-## 4. Expense Log
-
-The Expense Log is the transaction management page.
-
-### Main purpose
-
-To add, edit, delete, filter, and export transactions.
-
-### Main functions
-
-- Add new transaction
-- Edit transaction
-- Delete transaction
-- Search transactions
-- Filter by category
-- Filter by month
-- Export CSV
-- Add income stream for income records
-- Choose funding source for expenses
-- Use quick add suggestions
-
-### Editable fields
-
-- Date
-- Amount
-- Description
-- Category
-- Income stream
-- Funding source
-- Notes
-
-### Important logic
-
-Expenses can be paid from:
-
-```text
-Main Budget
-Emergency Fund
-```
-
-If an expense is paid from Emergency Fund, it reduces emergency balance instead of increasing normal monthly budget pressure.
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- add entry form
-- quick add section
-- transaction list
-- filters/search
-
-Suggested file name:
-
-```text
-screenshots/expense-log.png
-```
-
----
-
-## 5. Import Center
-
-The Import Center converts external data into valid Expense Log entries.
-
-### Main purpose
-
-To import data from different table formats and convert it into the tracker’s transaction format.
-
-### Supported import sources
-
-- CSV
-- TSV
-- TXT
-- Pasted Excel tables
-- Excel files through XLSX parser
-- Messy bank-statement-like text
-
-### Main functions
-
-- Upload file
-- Paste table/text
-- Detect columns automatically
-- Preview rows before importing
-- Detect dates
-- Detect amount columns
-- Detect debit/credit columns
-- Detect income vs expense
-- Predict category
-- Predict income stream
-- Detect duplicates
-- Import valid rows into Expense Log
-
-### Important logic
-
-The import parser attempts to map messy columns into:
-
-```text
-Date
-Description
-Amount
-Category
-Type
-Income Stream
-Funding Source
-Notes
-```
-
-It is a smart rule-based parser, not a cloud AI model.
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- file upload area
-- paste area
-- detected mapping
-- preview table
-
-Suggested file name:
-
-```text
-screenshots/import-center.png
-```
-
----
-
-## 6. Spending History
-
-The Spending History page compares financial behavior month by month.
-
-### Main purpose
-
-To show how spending, income, saving, and category behavior change over time.
-
-### Main functions
-
-- Monthly comparison table
-- Income vs expenses line chart
-- Category trends
-- Saved vs remaining
-- 100% category share chart
-- Spent percentage risk line
-- Monthly category pressure chart
-- Smart insights
-
-### Monthly comparison fields
-
-- Month
 - Guilt-free
 - Essentials
 - Wants
@@ -414,430 +334,152 @@ To show how spending, income, saving, and category behavior change over time.
 - Saved
 - Remaining
 
-### Important logic
+Best screenshot: `Screenshots/spending-history.png`
 
-```text
-Saved = Investment Transfers + Emergency Fund Transfers
-Remaining = Income - Total Spent - Saved
-```
+</details>
 
-### Screenshot to take
+<details>
+<summary><strong>🧠 Category Analysis</strong></summary>
 
-Take a screenshot showing:
-
-- monthly comparison table
-- income vs expenses chart
-- category trend chart
-
-Suggested file name:
-
-```text
-screenshots/spending-history.png
-```
-
----
-
-## 7. Category Analysis
-
-The Category Analysis page analyzes spending using both category and description.
-
-### Main purpose
-
-To identify the exact things that consume the most money.
-
-### Main functions
-
-- Uses description as subcategory
-- Shows top spending descriptions
-- Shows subcategory trend over time
-- Shows frequency vs average amount
-- Shows spending table by subcategory
-- Highlights repeated habits
-- Highlights high-ticket items
-- Highlights biggest spending leak
-
-### Important logic
-
-The app treats the transaction description as a subcategory.
+Category Analysis uses descriptions as subcategories.
 
 Example:
 
 ```text
 Category: Guilt-free
-Subcategory / Description: Coffee
+Subcategory: Coffee
 ```
 
-This allows the user to see not only that they spent on Guilt-free, but exactly what items caused the spending.
+This helps identify exact repeated habits, not only broad categories.
 
-### Screenshot to take
+Best screenshot: `Screenshots/category-analysis.png`
 
-Take a screenshot showing:
+</details>
 
-- top subcategories
-- subcategory trend chart
-- subcategory table
-- insight cards
+<details>
+<summary><strong>🛒 Wishlist</strong></summary>
 
-Suggested file name:
+Wishlist helps plan future purchases.
 
-```text
-screenshots/category-analysis.png
-```
+Main functions:
 
----
+- add item
+- expected price
+- priority
+- target month
+- edit item
+- delete item
+- mark as bought
+- auto-add bought item to Expense Log
 
-## 8. Budget Plan
+Best screenshot: `Screenshots/wishlist.png`
 
-The Budget Plan page manages planned allocation percentages.
+</details>
 
-### Main purpose
+<details>
+<summary><strong>📈 Forecast</strong></summary>
 
-To define how income should be distributed across budget buckets.
-
-### Main functions
-
-- Customize budget allocations
-- Update sliders
-- Show planned vs actual
-- Show allocation donut chart
-- Track spending pressure
-
-### Default budget buckets
-
-- Investment
-- Emergency Fund
-- Essentials
-- Wants
-- Guilt-free
-- Giving
-
-### Important logic
-
-Some buckets are calculated directly from salary, while others can be calculated from spendable money after investment and emergency allocation.
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- allocation sliders
-- budget cards
-- allocation donut
-
-Suggested file name:
-
-```text
-screenshots/budget-plan.png
-```
-
----
-
-## 9. Emergency Fund Logic
-
-Emergency Fund is treated as a dedicated safety balance.
-
-### Main purpose
-
-To separate true emergency savings from normal monthly spending.
-
-### Main functions
-
-- Emergency Fund increases when a transaction is added with category Emergency Fund
-- Emergency Fund decreases when an expense is paid from Emergency Fund
-- Emergency expenses can be excluded from normal monthly spending pressure
-- Prevents accidental double-counting
-
-### Important logic
-
-```text
-Emergency Fund Balance =
-Emergency Fund Transfers
-- Expenses Paid From Emergency Fund
-```
-
-This keeps emergency money separate from the main budget.
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- Expense Log funding source option
-- Emergency Fund balance in dashboard/summary
-
-Suggested file name:
-
-```text
-screenshots/emergency-fund-logic.png
-```
-
----
-
-## 10. Wishlist
-
-The Wishlist page manages planned purchases.
-
-### Main purpose
-
-To plan future purchases before they become actual expenses.
-
-### Main functions
-
-- Add wishlist item
-- Add expected price
-- Add category
-- Add priority
-- Add target month
-- Add notes
-- Edit any wishlist item
-- Delete wishlist item
-- Filter by status, category, and priority
-- Show wishlist KPI cards
-- Show cost by category chart
-- Show priority pressure chart
-- Mark item as bought
-- Automatically add bought item to Expense Log
-
-### Important logic
-
-When a wishlist item is marked as bought:
-
-1. The app asks for the actual paid amount.
-2. It creates a transaction in the Expense Log.
-3. The wishlist item is marked as Bought.
-4. The item cannot be added twice by mistake.
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- add wishlist form
-- wishlist cards
-- edit options
-- Bought → Log button
-- wishlist charts
-
-Suggested file name:
-
-```text
-screenshots/wishlist.png
-```
-
----
-
-## 11. Forecast
-
-The Forecast page projects financial outcomes.
-
-### Main purpose
-
-To estimate future financial growth based on current behavior and assumptions.
-
-### Forecast horizons
+Forecast estimates future outcomes across:
 
 - 1 year
 - 5 years
 - 10 years
 - 20 years
 
-### Main functions
+It uses historical averages and investment compounding.
 
-- Choose forecast basis
-- Edit annual investment return
-- Edit income growth
-- Edit expense growth
-- Show projected net worth
-- Show scenarios
-- Show forecast table
-- Show forecast insights
+Best screenshot: `Screenshots/forecast.png`
 
-### Important logic
+</details>
 
-The forecast uses historical averages and compounds investments monthly.
+<details>
+<summary><strong>🧮 Investment Calculator</strong></summary>
 
-```text
-Monthly Return = (1 + Annual Return) ^ (1/12) - 1
+The Investment Calculator simulates growth based on:
+
+- initial amount
+- monthly contribution
+- annual return
+- years
+- contribution growth
+
+Best screenshot: `Screenshots/investment-calculator.png`
+
+</details>
+
+---
+
+## 🧪 How to Run Locally
+
+1. Download or clone the repository.
+2. Open `index.html` in your browser.
+3. The app will load fake demo data automatically.
+4. No backend setup is required.
+
+```bash
+git clone https://github.com/YOUR-USERNAME/personal-budget-tracker.git
+cd personal-budget-tracker
 ```
 
-Scenario logic:
+Then open:
 
 ```text
-Base Case = annual return entered by user
-Worst Case = annual return - 10 percentage points
-Best Case = annual return + 10 percentage points
-```
-
-### Screenshot to take
-
-Take a screenshot showing:
-
-- forecast assumption inputs
-- 1/5/10/20 year cards
-- forecast chart
-- forecast table
-
-Suggested file name:
-
-```text
-screenshots/forecast.png
+index.html
 ```
 
 ---
 
-## 12. Investment Calculator
+## 🌍 How to Publish with GitHub Pages
 
-The Investment Calculator tests custom investment scenarios.
-
-### Main purpose
-
-To simulate long-term investment growth with compounding.
-
-### Main inputs
-
-- Initial amount
-- Monthly contribution
-- Annual return %
-- Number of years
-- Contribution growth %
-
-### Main functions
-
-- Calculate future investment value
-- Calculate total contributions
-- Calculate investment growth
-- Show value over time
-- Show contribution vs growth
-- Show milestone table
-
-### Important logic
-
-Investment value is calculated monthly using compound growth.
+1. Rename the main file to:
 
 ```text
-Investment Balance =
-Previous Balance × (1 + Monthly Return) + Monthly Contribution
+index.html
 ```
 
-### Screenshot to take
-
-Take a screenshot showing:
-
-- calculator inputs
-- final value cards
-- growth chart
-- milestone table
-
-Suggested file name:
+2. Upload it to a public GitHub repository.
+3. Go to:
 
 ```text
-screenshots/investment-calculator.png
+Settings → Pages
 ```
+
+4. Select:
+
+```text
+Deploy from branch
+Branch: main
+Folder: /root
+```
+
+5. Save and open the generated GitHub Pages link.
 
 ---
 
-## 13. Settings
+## 🎯 Portfolio Case Study Summary
 
-The Settings page controls customization.
+### Problem
 
-### Main purpose
+Most budgeting tools record expenses, but they do not clearly explain behavior or connect spending with future financial planning.
 
-To customize the app’s appearance and budget settings.
+### Solution
 
-### Main functions
+I built an offline-first finance analytics web app that organizes transactions, analyzes financial behavior, manages planned purchases, and forecasts investment growth.
 
-- Change theme
-- Change currency
-- Adjust budget allocations
-- Export data
-- Clear entries
+### My Role
 
-### Theme system
+I designed and built:
 
-The app includes multiple modern themes. Charts and dashboard colors adapt to the selected theme.
+- UI layout
+- dashboard structure
+- data model
+- import workflow
+- KPI calculations
+- forecasting logic
+- wishlist logic
+- chart interactions
 
-### Screenshot to take
-
-Take a screenshot showing:
-
-- theme library
-- budget allocation settings
-
-Suggested file name:
-
-```text
-screenshots/settings.png
-```
-
----
-
-## 14. Privacy Mode
-
-Privacy Mode hides sensitive numbers.
-
-### Main purpose
-
-To allow the user to screen-share or take screenshots without revealing financial values.
-
-### Main functions
-
-- Blur financial numbers
-- Blur chart data
-- Toggle visibility with an eye icon
-- Reveal temporarily on hover
-
-### Screenshot to take
-
-Take one optional screenshot with Privacy Mode enabled.
-
-Suggested file name:
-
-```text
-screenshots/privacy-mode.png
-```
-
----
-
-# Recommended Screenshot List
-
-For the strongest portfolio documentation, take these screenshots:
-
-| Priority | Screenshot | Why it matters |
-|---|---|---|
-| 1 | Dashboard | First impression and project value |
-| 2 | Spending History | Shows analytical depth |
-| 3 | Category Analysis | Shows behavior-level insights |
-| 4 | Import Center | Shows data cleaning/import logic |
-| 5 | Income Analysis | Shows income stream thinking |
-| 6 | Wishlist | Shows product thinking |
-| 7 | Forecast | Shows financial modeling |
-| 8 | Investment Calculator | Shows compounding logic |
-| 9 | Expense Log | Shows CRUD functionality |
-| 10 | Settings/Themes | Shows customization and UX polish |
-| Optional | Privacy Mode | Shows thoughtful UX for sensitive data |
-
----
-
-# Suggested Portfolio Case Study Structure
-
-## 1. Project Title
-
-**BudgetOS Pro — Personal Budget Tracker**
-
-## 2. One-line Description
-
-An offline-first finance analytics web app that turns transaction-level data into dashboards, spending insights, budget planning, wishlist tracking, and investment forecasts.
-
-## 3. Problem
-
-Most budgeting tools record transactions, but they do not clearly explain spending behavior or connect daily expenses to future financial planning.
-
-## 4. Solution
-
-I built a browser-based finance analytics app that organizes financial transactions, analyzes patterns, tracks income streams, manages planned purchases, and forecasts long-term wealth growth.
-
-## 5. My Role
-
-I designed and built the full app logic, UI layout, dashboard structure, data model, import workflow, KPI calculations, and forecasting model.
-
-## 6. Skills Demonstrated
+### Skills Demonstrated
 
 - Data cleaning
 - KPI design
@@ -845,33 +487,56 @@ I designed and built the full app logic, UI layout, dashboard structure, data mo
 - Financial analysis
 - JavaScript logic
 - Data modeling
-- Chart design
-- LocalStorage persistence
 - UX design
-- Forecast modeling
 - Product thinking
-
-## 7. Business Value
-
-The app helps users understand where money goes, identify spending leaks, track income quality, control planned purchases, and forecast investment growth.
+- Forecast modeling
 
 ---
 
-# Future Improvements
+## 📌 Recommended Screenshots for Documentation
 
-- Convert the app to React or Next.js
+| Priority | Screenshot | File Name | Why it matters |
+|---|---|---|---|
+| 1 | Dashboard | `dashboard.png` | First impression |
+| 2 | Spending History | `spending-history.png` | Shows analytical depth |
+| 3 | Category Analysis | `category-analysis.png` | Shows behavior insights |
+| 4 | Import Center | `import-center.png` | Shows data cleaning logic |
+| 5 | Income Analysis | `income-analysis.png` | Shows income stream thinking |
+| 6 | Wishlist | `wishlist.png` | Shows product thinking |
+| 7 | Forecast | `forecast.png` | Shows financial modeling |
+| 8 | Investment Calculator | `investment-calculator.png` | Shows compounding logic |
+| 9 | Expense Log | `expense-log.png` | Shows CRUD functionality |
+| 10 | Settings | `settings.png` | Shows customization |
+| Optional | Privacy Mode | `privacy-mode.png` | Shows privacy UX |
+
+---
+
+## 🔮 Future Improvements
+
+- Convert to React or Next.js
 - Add secure backend storage
-- Add user accounts
+- Add user authentication
 - Add cloud backup
 - Add AI-assisted import through a backend API
 - Add recurring transactions
-- Add goal-based savings plans
-- Add PWA installation support
 - Add multi-currency support
+- Add PWA installation
 - Add real bank statement templates
+- Add downloadable reports
 
 ---
 
-# Disclaimer
+## ⚠️ Disclaimer
 
-This project is for portfolio and educational purposes only. It is not financial advice.
+This project is for portfolio and educational purposes only.  
+It is not financial advice.
+
+---
+
+<div align="center">
+
+### Built as a finance analytics portfolio project
+
+**BudgetOS Pro — Personal Budget Tracker**
+
+</div>
