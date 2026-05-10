@@ -109,15 +109,9 @@ Month-by-month comparison of income, expenses, saved amount, remaining balance, 
 
 ---
 
-### 4. Category Analysis
 
-![Category Analysis](Screenshots/category-analysis.png)
 
-Uses transaction descriptions as subcategories to detect repeated spending habits and biggest leaks.
-
----
-
-### 5. Income Analysis
+### 4. Income Analysis
 
 ![Income Analysis](Screenshots/income-analysis.png)
 
@@ -125,7 +119,7 @@ Breaks income into salary, freelance, investment return, and unexpected income s
 
 ---
 
-### 6. Import Center
+### 5. Import Center
 
 ![Import Center](Screenshots/import-center.png)
 
@@ -133,7 +127,7 @@ Smart import workflow for CSV, Excel text, TSV, TXT, and messy financial tables.
 
 ---
 
-### 7. Wishlist
+### 6. Wishlist
 
 ![Wishlist](Screenshots/wishlist.png)
 
@@ -141,7 +135,7 @@ Plan future purchases, estimate prices, set priority, and convert bought items i
 
 ---
 
-### 8. Expense Log
+### 7. Expense Log
 
 ![Expense Log](Screenshots/expense-log.png)
 
@@ -149,7 +143,7 @@ Editable transaction log with search, filters, categories, income streams, and e
 
 ---
 
-### 9. Forecast
+### 8. Forecast
 
 ![Forecast](Screenshots/forecast.png)
 
@@ -157,7 +151,7 @@ Projects future wealth for 1, 5, 10, and 20 years using investment compounding.
 
 ---
 
-### 10. Investment Calculator
+### 9. Investment Calculator
 
 ![Investment Calculator](Screenshots/investment-calculator.png)
 
@@ -165,7 +159,7 @@ Simulates investment growth using starting amount, monthly contribution, annual 
 
 ---
 
-### 11. Settings & Themes
+### 10. Settings & Themes
 
 ![Settings](Screenshots/settings.png)
 
@@ -173,7 +167,7 @@ Theme library and budget allocation settings.
 
 ---
 
-### 12. Theme Showcase
+### 11. Theme Showcase
 
 ![Theme Showcase](Screenshots/theme-showcase.png)
 
@@ -181,7 +175,7 @@ A dedicated screenshot to show the available modern themes and how the app style
 
 ---
 
-### 13. Privacy Mode Button
+### 12. Privacy Mode Button
 
 ![Privacy Mode Button](Screenshots/privacy-button.png)
 
@@ -189,7 +183,7 @@ Shows the eye/privacy button used to hide sensitive numbers before sharing the s
 
 ---
 
-### 14. Privacy Mode Active
+### 13. Privacy Mode Active
 
 ![Privacy Mode Active](Screenshots/privacy-mode-active.png)
 
@@ -396,7 +390,7 @@ Main functions:
 - mark as bought
 - auto-add bought item to Expense Log
 
-Best screenshot: `Screenshots/wishlist.png`
+Best screenshot: `Screenshots/Wishlist.png`
 
 </details>
 
@@ -455,7 +449,7 @@ Forecast estimates future outcomes across:
 
 It uses historical averages and investment compounding.
 
-Best screenshot: `Screenshots/forecast.png`
+Best screenshot: `Screenshots/Forecast.png`
 
 </details>
 
