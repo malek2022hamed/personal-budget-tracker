@@ -129,7 +129,7 @@ Smart import workflow for CSV, Excel text, TSV, TXT, and messy financial tables.
 
 ### 6. Wishlist
 
-![Wishlist](Screenshots/wishlist.png)
+![Wishlist](Screenshots/Wishlist.png)
 
 Plan future purchases, estimate prices, set priority, and convert bought items into expense log entries.
 
@@ -145,7 +145,7 @@ Editable transaction log with search, filters, categories, income streams, and e
 
 ### 8. Forecast
 
-![Forecast](Screenshots/forecast.png)
+![Forecast](Screenshots/Forecast.png)
 
 Projects future wealth for 1, 5, 10, and 20 years using investment compounding.
 
@@ -631,6 +631,6 @@ It is not financial advice.
 
 ### Built as a finance analytics portfolio project
 
-**BudgetOS Pro — Personal Budget Tracker**
+**By Malek Hamed**
 
 </div>
