@@ -4,7 +4,7 @@ A modern offline-first personal finance analytics web app built with **HTML, CSS
 
 This project turns raw transaction data into an interactive personal finance operating system with dashboards, expense tracking, income analysis, spending history, category analysis, budget planning, wishlist tracking, emergency fund logic, investment forecasting, and smart import tools.
 
-The public demo uses **fake English financial data** for portfolio presentation.
+The public demo uses **Ai generated financial data** for portfolio presentation.
 
 ---
 
