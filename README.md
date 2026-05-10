@@ -19,9 +19,9 @@ A modern offline-first personal finance operating system that turns transaction-
 
 <br>
 
-**Live Demo:** Add your GitHub Pages link here  
+**Live Demo:** https://malek2022hamed.github.io/personal-budget-tracker/
 **Status:** Portfolio Demo  
-**Data:** Fake English Demo Data  
+**Data:** Demo Data  
 
 </div>
 
