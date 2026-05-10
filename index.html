@@ -756,6 +756,249 @@ body[data-theme="paper"] body::after, body[data-theme="pearl"] body::after{opaci
 body[data-theme="paper"] .chart-toolbar,body[data-theme="pearl"] .chart-toolbar{background:rgba(255,255,255,.66)}
 @media(max-width:860px){.chart-toolbar{border-radius:15px;align-items:flex-start}.chart-toolbar-left,.chart-toolbar-right{width:100%}.chart-filter-select{flex:1;min-width:120px}.chart-tool-btn{flex:0 0 auto}.brand-svg{width:76%;height:76%}}
 
+
+
+/* ═════════ MOBILE STABILITY PATCH — all pages usable on phone ═════════ */
+.mobile-page-switcher{display:none}
+@media(max-width:860px){
+  .mobile-page-switcher{
+    display:flex;position:fixed;z-index:1095;left:12px;right:12px;
+    top:calc(54px + env(safe-area-inset-top));align-items:center;gap:8px;
+    padding:8px 10px;border:1px solid var(--border2);border-radius:18px;
+    background:rgba(10,12,18,.82);backdrop-filter:blur(22px) saturate(1.25);
+    box-shadow:0 12px 32px rgba(0,0,0,.24)
+  }
+  .mobile-page-switcher label{font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;flex-shrink:0}
+  .mobile-page-switcher select{min-height:38px;height:38px;font-size:13px;border-radius:13px;padding:7px 10px;flex:1;width:auto;min-width:0}
+
+  /* Move salary/month controls below the page picker so they never cover the page content */
+  .s-salary{top:calc(112px + env(safe-area-inset-top));left:12px;right:50.5%;height:82px;overflow:hidden}
+  .s-footer{top:calc(112px + env(safe-area-inset-top));left:50.5%;right:12px;height:82px;overflow:hidden}
+  .main{padding-top:calc(206px + env(safe-area-inset-top));padding-bottom:112px;}
+  .page{min-height:calc(100vh - 220px);}
+
+  /* Every page section can scroll naturally; wide tables stay inside the screen */
+  .card,.plan-section,.rule-card,.tile{max-width:100%}
+  .history-table-wrap,.import-preview-wrap,.card[style*="overflow-x:auto"],div[style*="overflow-x:auto"]{overflow-x:auto!important;-webkit-overflow-scrolling:touch;max-width:100%}
+  table,.history-table,.mc-table,.import-table{max-width:none}
+
+  /* Mobile forms: no hidden right-side controls, all filters wrap nicely */
+  .summary-controls,.history-controls,.forecast-controls,.calculator-controls,.chart-filter-bar{width:100%;display:grid!important;grid-template-columns:1fr 1fr;gap:8px;overflow:visible!important}
+  .summary-controls .fl,.history-controls .fl,.forecast-controls .fl,.calculator-controls .fl,.chart-filter-bar .fl{min-width:0;width:100%}
+  .summary-controls .btn,.history-controls .btn,.forecast-controls .btn,.calculator-controls .btn{grid-column:1/-1;width:100%}
+  .ph-actions{overflow:visible;display:flex;flex-wrap:wrap}
+
+  /* Bottom navigation: make the scrollbar hint visible and avoid dead taps */
+  .s-nav{padding:8px 10px 7px;gap:8px;scroll-padding:10px;touch-action:pan-x}
+  .nav-btn{touch-action:manipulation;user-select:none}
+
+  /* Modals fit phone screens */
+  .edit-modal{align-items:flex-end;padding:10px;overflow:auto}
+  .edit-box{width:100%;max-height:88vh;overflow:auto;border-radius:24px 24px 18px 18px;padding:16px}
+  .edit-grid{grid-template-columns:1fr!important}
+
+  /* Wishlist and import pages need a little extra breathing room */
+  .wish-form-grid,.wish-meta-grid,.import-map-grid{grid-template-columns:1fr!important}
+  .wish-list{grid-template-columns:1fr!important}
+  .theme-grid{grid-template-columns:1fr!important}
+
+  /* Avoid hover-lift feeling broken on touch devices */
+  .card:hover,.tile:hover,.wish-card:hover{transform:none}
+}
+@media(max-width:390px){
+  .mobile-page-switcher{left:8px;right:8px}
+  .s-salary{left:8px;right:50.5%}.s-footer{left:50.5%;right:8px}
+  .summary-controls,.history-controls,.forecast-controls,.calculator-controls,.chart-filter-bar{grid-template-columns:1fr}
+}
+
+
+
+/* ═════════ MOBILE READABILITY HOTFIX — no accidental blur / clear navigation ═════════ */
+.mobile-unblur-btn{display:none}
+@media(max-width:860px){
+  /* Avoid blurry glass rendering on mobile browsers */
+  .main,.sidebar,.mobile-topbar,.mobile-page-switcher,.s-salary,.s-footer,.card,.tile,.chart-toolbar,.desktop-commandbar{
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  }
+  body::after{opacity:.28!important}
+
+  /* Privacy mode is disabled on phone by default so the app never opens blurry */
+  body.privacy-mode .private-number,
+  body.privacy-mode .tile-val,
+  body.privacy-mode .stat-number,
+  body.privacy-mode .e-amt,
+  body.privacy-mode .e-date,
+  body.privacy-mode .tile-sub,
+  body.privacy-mode .pb-nums,
+  body.privacy-mode .s-sal-wrap,
+  body.privacy-mode .mc-table td:not(:first-child),
+  body.privacy-mode .cw canvas,
+  body.privacy-mode #sum-best-worst,
+  body.privacy-mode #sum-top-expenses,
+  body.privacy-mode #sum-scorecard,
+  body.privacy-mode #log-footer,
+  body.privacy-mode #data-import-note,
+  body.privacy-mode #fc-horizon-cards,
+  body.privacy-mode #fc-basis-cards,
+  body.privacy-mode #fc-table,
+  body.privacy-mode #fc-insights,
+  body.privacy-mode #calc-results,
+  body.privacy-mode #calc-table,
+  body.privacy-mode #history-insights,
+  body.privacy-mode #history-table,
+  body.privacy-mode #history-range-label,
+  body.privacy-mode #wishlist-kpis,
+  body.privacy-mode #wishlist-list,
+  body.privacy-mode #wishlist-insights{
+    filter:none!important;opacity:1!important;user-select:auto!important;
+  }
+
+  /* Simplified phone header: dropdown is the main navigation */
+  .mobile-topbar{height:54px;background:rgba(10,12,18,.96)!important}
+  .mobile-page-switcher{
+    top:calc(58px + env(safe-area-inset-top))!important;
+    z-index:2200!important;background:rgba(10,12,18,.98)!important;
+    box-shadow:0 10px 26px rgba(0,0,0,.35)!important;
+  }
+  .mobile-page-switcher label{color:var(--cyan2)!important;font-weight:800}
+  .mobile-page-switcher select{background:rgba(255,255,255,.09)!important;color:var(--text)!important;border-color:rgba(255,255,255,.18)!important}
+
+  /* Remove fixed salary/month panels that were covering the page */
+  .s-salary,.s-footer{display:none!important}
+  .main{padding-top:calc(116px + env(safe-area-inset-top))!important;padding-bottom:104px!important}
+  .page{padding-top:12px!important;min-height:auto!important}
+
+  /* Bottom bar is secondary only; make it shorter and less intrusive */
+  .sidebar{min-height:62px!important;background:rgba(10,12,18,.96)!important}
+  .nav-btn{flex:0 0 70px!important;min-width:70px!important;height:48px!important;font-size:9px!important}
+  .nav-btn .ni{font-size:15px!important}
+
+  /* Fix charts/tables/cards on small screens */
+  .cw{height:230px!important;max-width:100%!important;overflow:hidden!important}
+  .card{background:rgba(18,24,42,.94)!important;border-color:rgba(255,255,255,.10)!important}
+  .tile{background:rgba(255,255,255,.06)!important}
+  .ph-title{font-size:23px!important}
+  .ph-actions{max-width:100%;overflow:visible!important}
+
+  /* Permanent rescue button in case browser cache still has privacy enabled */
+  .mobile-unblur-btn{
+    display:flex;position:fixed;z-index:3000;right:10px;bottom:calc(76px + env(safe-area-inset-bottom));
+    width:44px;height:44px;border-radius:16px;border:1px solid rgba(255,255,255,.16);
+    background:linear-gradient(135deg,var(--purple),var(--cyan));color:white;align-items:center;justify-content:center;
+    font-size:18px;box-shadow:0 12px 30px rgba(0,0,0,.38);
+  }
+}
+
+
+
+/* ═════════ FINAL MOBILE TRUE-APP PATCH — readable, no blur, no hidden navigation ═════════ */
+@media (max-width: 860px){
+  html, body{
+    width:100%!important;max-width:100%!important;min-height:100%!important;
+    overflow-x:hidden!important;background:#070A12!important;color:#F8FAFC!important;
+    filter:none!important;opacity:1!important;
+  }
+  body::before{opacity:.22!important;filter:none!important;}
+  body::after{opacity:.10!important;filter:none!important;}
+
+  /* The old mobile bottom nav was visually leaking behind the page. Hide it completely and use the dropdown. */
+  .sidebar{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important;}
+  .layout{display:block!important;padding:0!important;margin:0!important;min-height:100vh!important;}
+
+  .mobile-topbar{
+    display:flex!important;position:fixed!important;left:0!important;right:0!important;top:0!important;
+    height:62px!important;z-index:10000!important;align-items:center!important;justify-content:space-between!important;
+    padding:10px 14px!important;padding-top:calc(10px + env(safe-area-inset-top))!important;
+    background:#0B0F18!important;border-bottom:1px solid rgba(255,255,255,.10)!important;
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:0 8px 24px rgba(0,0,0,.35)!important;
+    filter:none!important;opacity:1!important;
+  }
+  .mobile-brand-name{color:#F8FAFC!important;font-size:18px!important;font-weight:800!important;max-width:190px!important;}
+  .mobile-credit{color:#A7B0C0!important;font-size:10px!important;}
+  .mobile-brand-icon{filter:none!important;opacity:1!important;}
+
+  .mobile-page-switcher{
+    display:flex!important;position:fixed!important;left:12px!important;right:12px!important;
+    top:calc(70px + env(safe-area-inset-top))!important;z-index:9999!important;
+    align-items:center!important;gap:10px!important;padding:10px 12px!important;
+    border:1px solid rgba(255,255,255,.14)!important;border-radius:20px!important;
+    background:#101522!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+    box-shadow:0 14px 34px rgba(0,0,0,.42)!important;filter:none!important;opacity:1!important;
+  }
+  .mobile-page-switcher label{color:#67E8F9!important;font-size:10px!important;font-weight:900!important;letter-spacing:.16em!important;}
+  .mobile-page-switcher select{
+    min-height:48px!important;height:48px!important;font-size:18px!important;color:#F8FAFC!important;
+    background:#1A1F2B!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:18px!important;
+    padding:8px 14px!important;outline:none!important;filter:none!important;opacity:1!important;
+  }
+
+  .main{
+    display:block!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+    width:100%!important;max-width:100%!important;height:auto!important;min-height:100vh!important;
+    padding-top:calc(142px + env(safe-area-inset-top))!important;padding-bottom:28px!important;
+    background:#070A12!important;overflow:visible!important;filter:none!important;opacity:1!important;
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  }
+  .page{
+    display:none!important;visibility:visible!important;opacity:1!important;filter:none!important;transform:none!important;
+    animation:none!important;padding:14px 12px 34px!important;min-height:auto!important;width:100%!important;max-width:100%!important;
+  }
+  .page.on{display:block!important;}
+  .page *, .main *{filter:none!important;text-shadow:none!important;}
+  .page, .page.on, .card, .tile, .plan-section, .rule-card, .wish-card, .alert{
+    opacity:1!important;visibility:visible!important;
+  }
+
+  .ph{margin:0 0 14px!important;gap:8px!important;}
+  .ph-title{font-size:26px!important;line-height:1.08!important;color:#F8FAFC!important;background:none!important;-webkit-text-fill-color:initial!important;}
+  .ph-sub,.metric-note,.tile-sub,.mini-list-sub,.insight-body{color:#94A3B8!important;opacity:1!important;}
+  .card-title,.tile-lbl,.fl label{color:#CBD5E1!important;opacity:1!important;}
+
+  .card{
+    background:#111827!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:22px!important;
+    box-shadow:none!important;margin-bottom:12px!important;color:#F8FAFC!important;
+  }
+  .card::before{display:none!important;}
+  .tile{
+    background:#151D2C!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:20px!important;
+    box-shadow:none!important;color:#F8FAFC!important;
+  }
+  .tile-val,.stat-number,.e-desc,.mini-list-main,.insight-title{color:#F8FAFC!important;opacity:1!important;}
+
+  .g2,.g3,.g4,.g5,.mini-grid,.insight-grid{grid-template-columns:1fr!important;gap:12px!important;}
+  .fg,.edit-grid,.wish-form-grid,.wish-meta-grid,.import-map-grid{grid-template-columns:1fr!important;gap:10px!important;}
+
+  input,select,textarea{
+    background:#1A2233!important;color:#F8FAFC!important;border:1px solid rgba(255,255,255,.15)!important;
+    border-radius:16px!important;min-height:44px!important;font-size:16px!important;opacity:1!important;filter:none!important;
+  }
+  input::placeholder,textarea::placeholder{color:#64748B!important;opacity:1!important;}
+  .btn,.command-btn,.chart-tool-btn,.qa-btn{
+    opacity:1!important;filter:none!important;border-radius:14px!important;color:#F8FAFC!important;
+  }
+
+  .cw{height:250px!important;min-height:230px!important;max-width:100%!important;overflow:hidden!important;background:#0B1020!important;border-radius:18px!important;}
+  canvas{max-width:100%!important;filter:none!important;opacity:1!important;}
+  .history-table-wrap,.import-preview-wrap,div[style*="overflow-x:auto"],.table-mobile-scroll{
+    overflow-x:auto!important;max-width:100%!important;-webkit-overflow-scrolling:touch!important;
+  }
+  .history-table,.mc-table,.import-table{min-width:720px!important;}
+
+  .e-hdr{display:none!important;}
+  .e-row{
+    display:grid!important;grid-template-columns:1fr auto!important;gap:7px 10px!important;margin:10px 0!important;padding:12px!important;
+    background:#151D2C!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:18px!important;
+  }
+
+  .wish-list{grid-template-columns:1fr!important;}
+  .theme-grid{grid-template-columns:1fr!important;}
+  .chart-toolbar{background:#101827!important;border-color:rgba(255,255,255,.12)!important;}
+
+  .mobile-unblur-btn{display:none!important;}
+  #toast{left:12px!important;right:12px!important;bottom:18px!important;z-index:12000!important;}
+  .app-credit{margin:14px 12px 28px!important;color:#94A3B8!important;background:#0B1020!important;border-color:rgba(255,255,255,.10)!important;}
+}
+
 </style>
 </head>
 <body>
@@ -1358,6 +1601,7 @@ body[data-theme="paper"] .chart-toolbar,body[data-theme="pearl"] .chart-toolbar{
   </div>
 </div>
 
+<button class="mobile-unblur-btn" onclick="forceMobileReadable()" title="Clear blur">👁</button>
 <div id="toast"></div>
 <script>
 
@@ -1382,18 +1626,37 @@ if (typeof Chart === 'undefined') {
 }
 
 
-let privacyMode=localStorage.getItem('bos4_privacy_mode')==='1';
+let privacyMode=false;
+try{localStorage.setItem('bos4_privacy_mode','0')}catch(e){}
+function isPhoneView(){return window.matchMedia && window.matchMedia('(max-width: 860px)').matches;}
 function applyPrivacy(){
+  if(isPhoneView()){ privacyMode=false; try{localStorage.setItem('bos4_privacy_mode','0')}catch(e){} }
   document.body.classList.toggle('privacy-mode',privacyMode);
   const b=document.getElementById('privacy-toggle');
   if(b)b.textContent=privacyMode?'🙈 Show numbers':'👁 Hide numbers';
 }
 function togglePrivacy(){
+  if(isPhoneView()){
+    forceMobileReadable();
+    if(typeof toast==='function')toast('Mobile readable mode is active');
+    return;
+  }
   privacyMode=!privacyMode;
   localStorage.setItem('bos4_privacy_mode',privacyMode?'1':'0');
   applyPrivacy();
   if(typeof toast==='function')toast(privacyMode?'Numbers hidden':'Numbers visible');
 }
+function forceMobileReadable(){
+  privacyMode=false;
+  try{localStorage.setItem('bos4_privacy_mode','0')}catch(e){}
+  document.body.classList.remove('privacy-mode');
+  document.querySelectorAll('*').forEach(el=>{
+    if(getComputedStyle(el).filter!=='none' && !el.classList.contains('tile-glow')) el.style.filter='none';
+  });
+  const b=document.getElementById('privacy-toggle');
+  if(b)b.textContent='👁 Hide numbers';
+}
+window.addEventListener('resize',()=>{if(isPhoneView())forceMobileReadable();});
 
 // ═══════ DATA ═══════════════════════════════════════════════════
 let CURR='EGP';
@@ -1442,6 +1705,7 @@ const mLabel=mk=>{const[y,m]=mk.split('-');return['Jan','Feb','Mar','Apr','May',
 const mKey=d=>d.slice(0,7);
 const today=new Date().toISOString().slice(0,10);
 let CH={};
+window.CH=CH;
 function getCss(name){return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || name;}
 
 let ALLOC=JSON.parse(localStorage.getItem('bos4_alloc')||'null')||{invest:20,emergency:10,essentials:30,wants:25,guiltfree:14,giving:6};
@@ -1625,19 +1889,43 @@ function animateTileVal(el,val,fmt){
 }
 
 // ─── NAVIGATION ───────────────────────────────────────────────
+const APP_PAGES=[
+  ['dashboard','Dashboard'],['summary','Summary'],['income','Income'],['budget','Budget'],
+  ['log','Expense Log'],['import','Import'],['history','History'],['analysis','Deep Analysis'],
+  ['plan','Plan'],['checklist','Checklist'],['wishlist','Wishlist'],['forecast','Forecast'],
+  ['calculator','Calculator'],['settings','Settings']
+];
+const PAGE_RENDERERS={
+  dashboard:renderDash,summary:renderSummary,income:renderIncomeAnalysis,budget:renderBudget,log:renderLog,
+  import:renderImportCenter,history:renderHistory,analysis:renderAnalysis,plan:renderPlan,
+  checklist:renderChecklist,wishlist:renderWishlist,forecast:renderForecast,
+  calculator:renderInvestmentCalculator,settings:renderSettings
+};
+
 function goByPage(page){
   const btn=[...document.querySelectorAll('.nav-btn')].find(b=>(b.getAttribute('onclick')||'').includes("go('"+page+"'"));
   go(page, btn || document.querySelector('.nav-btn'));
 }
 
 function go(page,btn){
+  const target=document.getElementById('p-'+page);
+  if(!target){toast?.('Page not found: '+page,false);return;}
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
-  document.getElementById('p-'+page).classList.add('on');
-  btn.classList.add('on');
-  ({dashboard:renderDash,summary:renderSummary,income:renderIncomeAnalysis,budget:renderBudget,log:renderLog,import:renderImportCenter,history:renderHistory,
-    analysis:renderAnalysis,plan:renderPlan,checklist:renderChecklist,wishlist:renderWishlist,
-    forecast:renderForecast,calculator:renderInvestmentCalculator,settings:renderSettings})[page]?.();
+  target.classList.add('on');
+  if(btn)btn.classList.add('on');
+  const mobileSel=document.getElementById('mobile-page-select');
+  if(mobileSel && mobileSel.value!==page)mobileSel.value=page;
+  try{PAGE_RENDERERS[page]?.();}catch(err){console.error('Render error on '+page,err);toast?.('Render error on '+page,false);}
+  if(window.innerWidth<=860){
+    document.activeElement?.blur?.();
+    setTimeout(()=>{
+      const main=document.querySelector('.main');
+      if(main&&main.scrollTo)main.scrollTo({top:0,behavior:'smooth'});
+      window.scrollTo({top:0,behavior:'smooth'});
+      try{Object.values(CH||{}).forEach(ch=>ch?.resize?.())}catch(e){}
+    },60);
+  }
 }
 
 function buildMonthSel(){
@@ -3019,8 +3307,75 @@ function renderSettings(){
 }
 loadBudgetProfile();
 
+
+// ─── MOBILE NAVIGATION FIX ────────────────────────────────────
+function initMobileNavigation(){
+  if(document.getElementById('mobile-page-switcher'))return;
+  const sw=document.createElement('div');
+  sw.id='mobile-page-switcher';
+  sw.className='mobile-page-switcher';
+  sw.innerHTML=`
+    <label for="mobile-page-select">Page</label>
+    <select id="mobile-page-select" onchange="goByPage(this.value)">
+      ${APP_PAGES.map(([id,label])=>`<option value="${id}">${label}</option>`).join('')}
+    </select>
+  `;
+  document.body.appendChild(sw);
+  const active=document.querySelector('.page.on')?.id?.replace('p-','')||'dashboard';
+  document.getElementById('mobile-page-select').value=active;
+
+  // Let users swipe the bottom navigation smoothly and keep selected tab visible.
+  document.querySelectorAll('.nav-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(window.innerWidth<=860){
+        setTimeout(()=>btn.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}),80);
+      }
+    });
+  });
+}
+
+
+
+// FINAL MOBILE READABILITY PATCH
+function forceTrueMobileApp(){
+  const isMobile = window.matchMedia && window.matchMedia('(max-width: 860px)').matches;
+  if(!isMobile) return;
+  try{localStorage.setItem('bos4_privacy_mode','0')}catch(e){}
+  if(typeof privacyMode !== 'undefined') privacyMode=false;
+  document.body.classList.remove('privacy-mode');
+  document.documentElement.classList.add('mobile-true-app');
+  document.body.classList.add('mobile-true-app');
+  const sidebar=document.querySelector('.sidebar');
+  if(sidebar){sidebar.style.display='none';sidebar.style.opacity='0';sidebar.style.pointerEvents='none';}
+  document.querySelectorAll('.page,.page *,.main,.main *,.card,.tile,canvas').forEach(el=>{
+    el.style.filter='none';
+    if(el.classList.contains('page') || el.classList.contains('card') || el.classList.contains('tile')){
+      el.style.opacity='1';
+      el.style.visibility='visible';
+    }
+  });
+  const active=document.querySelector('.page.on')?.id?.replace('p-','')||'dashboard';
+  const mobileSel=document.getElementById('mobile-page-select');
+  if(mobileSel && mobileSel.value!==active) mobileSel.value=active;
+}
+
+(function(){
+  const oldGo = window.go;
+  if(typeof oldGo === 'function'){
+    window.go = function(page,btn){
+      oldGo(page,btn);
+      setTimeout(forceTrueMobileApp,40);
+      setTimeout(forceTrueMobileApp,250);
+    };
+  }
+  window.addEventListener('load',()=>{forceTrueMobileApp();setTimeout(forceTrueMobileApp,300);setTimeout(forceTrueMobileApp,900);});
+  window.addEventListener('resize',()=>setTimeout(forceTrueMobileApp,80));
+  window.addEventListener('orientationchange',()=>setTimeout(forceTrueMobileApp,350));
+})();
+
 // ─── INIT ─────────────────────────────────────────────────────
 buildMonthSel();
+initMobileNavigation();
 applyPrivacy();
 document.getElementById('s-spend').textContent=fE(spendable());
 document.getElementById('e-date').value=today;
@@ -3029,12 +3384,14 @@ renderDash();
 renderLog();
 try{renderWishlist();}catch(e){console.warn('Wishlist initial render skipped', e);}
 document.getElementById('data-import-note').textContent=`${DB.length.toLocaleString()} entries loaded from Excel`;
+forceTrueMobileApp();
+setTimeout(forceTrueMobileApp,300);
 </script>
 
 <script>
 (function(){
   function resizeCharts(){
-    if(window.CH){Object.values(window.CH).forEach(function(ch){try{ch.resize()}catch(e){}})}
+    if(typeof CH!=='undefined'){Object.values(CH).forEach(function(ch){try{ch.resize()}catch(e){}})}
   }
   window.addEventListener('orientationchange', function(){setTimeout(resizeCharts, 350)});
   window.addEventListener('resize', function(){clearTimeout(window.__pbtResize); window.__pbtResize=setTimeout(resizeCharts, 160)});
