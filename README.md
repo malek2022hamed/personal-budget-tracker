@@ -554,55 +554,7 @@ I designed and built:
 
 ---
 
-## 📌 Recommended Screenshots for Documentation
 
-| Priority | Screenshot | File Name | Why it matters |
-|---|---|---|---|
-| 1 | Dashboard | `dashboard.png` | First impression |
-| 2 | Spending History | `spending-history.png` | Shows analytical depth |
-| 3 | Category Analysis | `category-analysis.png` | Shows behavior insights |
-| 4 | Import Center | `import-center.png` | Shows data cleaning logic |
-| 5 | Income Analysis | `income-analysis.png` | Shows income stream thinking |
-| 6 | Wishlist | `wishlist.png` | Shows product thinking |
-| 7 | Forecast | `forecast.png` | Shows financial modeling |
-| 8 | Investment Calculator | `investment-calculator.png` | Shows compounding logic |
-| 9 | Expense Log | `expense-log.png` | Shows CRUD functionality |
-| 10 | Settings | `settings.png` | Shows customization |
-| 11 | Theme Showcase | `theme-showcase.png` | Shows visual customization |
-| 12 | Privacy Button | `privacy-button.png` | Shows the privacy control |
-| 13 | Privacy Mode Active | `privacy-mode-active.png` | Shows sensitive numbers blurred |
-
----
-
----
-
-## 📁 Required Screenshot File Structure
-
-To make images appear correctly on GitHub, keep the folder name and file names exactly like this:
-
-```text
-personal-budget-tracker/
-│
-├── index.html
-├── README.md
-└── Screenshots/
-    ├── dashboard.png
-    ├── summary-view.png
-    ├── spending-history.png
-    ├── category-analysis.png
-    ├── income-analysis.png
-    ├── import-center.png
-    ├── wishlist.png
-    ├── expense-log.png
-    ├── forecast.png
-    ├── investment-calculator.png
-    ├── settings.png
-    ├── theme-showcase.png
-    ├── privacy-button.png
-    └── privacy-mode-active.png
-```
-
-GitHub is case-sensitive, so `Screenshots/` must match the folder name exactly.
 
 
 ## 🔮 Future Improvements
